@@ -5,6 +5,8 @@ import { useState } from "react"
 import "../css/Home.css"
 import { useNavigate } from "react-router-dom"
 
+import introDescImg from "/photos/intro_desc-img3.png"
+
 const Home = function(){
 
     const [menuOpen, setMenuOpen] = useState(false)
@@ -114,8 +116,10 @@ const Home = function(){
             
                 <img className = 'dsk-card-placeholder'
                 
-                src="/photos/home-photo-2.png" 
-                alt="Card Shwoing progress" />
+                src = {introDescImg}
+                alt="Card Shwoing progress" 
+                loading ="lazy"
+                />
             
                    
 

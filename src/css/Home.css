@@ -270,6 +270,9 @@
   .section2 {
     display: none;
   }
+  .section1 {
+    background-image: url(/public/photos/intro_img2.png);
+  }
   .dsk-hero {
     display: flex;
     position: relative;
@@ -402,7 +405,6 @@
   }
   .dsk-section2 .dsk-card-placeholder {
     border-radius: none;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     width: 48.5%;
     height: 20rem;
   }
