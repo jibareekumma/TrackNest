@@ -23,12 +23,12 @@ const SearchFeature = function(){
 
     return <>
     
-        <div className = 'search-wrapper'>
-    <form className = 'search-container'
+        <div className='search-wrapper tn-search-wrap'>
+    <form className='search-container tn-search'
     onSubmit = {(e) => e.preventDefault()}
     >
         <input type="text" 
-        placeholder = 'Search your projects'
+        placeholder='Search projects by name...'
         value = {query}
         onChange = {(e) => setQuery(e.target.value)}
         />

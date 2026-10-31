@@ -1,29 +1,22 @@
-
-
 import { useParams, useNavigate } from 'react-router-dom'
 import { useContext, useState, useEffect } from 'react'
 import { ProjectContext } from '../context/ProjectContext'
 import '../css/ProjectDetails.css'
-import CircularProgress from './CircularProgress'
 import { db } from '../config/firebase'
 import { doc, updateDoc } from 'firebase/firestore'
 import { useAuth } from '../context/AuthContext/index.jsx'
 
-
-const ProjectDetail = function(){
-
+const ProjectDetail = function() {
     const { id } = useParams()
     const { projects } = useContext(ProjectContext)
     const { currentUser } = useAuth()
     const navigate = useNavigate()
-
     const [taskName, setTaskName] = useState('')
     const [task, setTask] = useState([])
     const [completed, setCompleted] = useState([])
-
+    const [saving, setSaving] = useState(false)
     const project = projects.find((proj) => String(proj.id) === String(id))
 
-   
     useEffect(() => {
         if (project) {
             setTask(project.task ?? [])
@@ -31,129 +24,59 @@ const ProjectDetail = function(){
         }
     }, [project])
 
-    
     const saveToFirestore = async function(updatedTasks, updatedCompleted) {
         if (!currentUser) return
-        const projectDoc = doc(db, 'users', currentUser.uid, 'projects', id)
-        await updateDoc(projectDoc, {
-            task: updatedTasks,
-            completed: updatedCompleted
-        })
+        setSaving(true)
+        try {
+            await updateDoc(doc(db, 'users', currentUser.uid, 'projects', id), {
+                task: updatedTasks,
+                completed: updatedCompleted
+            })
+        } finally { setSaving(false) }
     }
 
-    if (!project) {
-        return <h2>Project not found</h2>
-    }
+    if (!project) return <main className="tn-project-not-found"><h2>Project not found</h2><button onClick={() => navigate('/taskadd')}>Back to dashboard</button></main>
 
-    const handleInput = function(e){
-        setTaskName(e.target.value)
+    const handleClick = function() {
+        if (!taskName.trim()) return
+        const updatedTasks = [...task, taskName.trim()]
+        setTask(updatedTasks); setTaskName(''); saveToFirestore(updatedTasks, completed)
     }
-
-    const handleClick = function(){
-        if (taskName.trim() === '') return
-        const updatedTasks = [...task, taskName]
-        setTask(updatedTasks)
-        setTaskName('')
-        saveToFirestore(updatedTasks, completed)
-    }
-
-  
-    const handleTaskDel = function(index){
+    const handleTaskDel = function(index) {
         const updatedTasks = task.filter((_, n) => n !== index)
-        setTask(updatedTasks)
-        saveToFirestore(updatedTasks, completed)
+        setTask(updatedTasks); saveToFirestore(updatedTasks, completed)
     }
-
-   
-    const handleCompletedDel = function(index){
+    const handleCompletedDel = function(index) {
         const updatedCompleted = completed.filter((_, i) => i !== index)
-        setCompleted(updatedCompleted)
-        saveToFirestore(task, updatedCompleted)
+        setCompleted(updatedCompleted); saveToFirestore(task, updatedCompleted)
     }
-
-    
-    const handleComplete = function(index){
-        const completedTask = task[index]
+    const handleComplete = function(index) {
         const updatedTasks = task.filter((_, i) => i !== index)
-        const updatedCompleted = [...completed, completedTask]
-        setTask(updatedTasks)
-        setCompleted(updatedCompleted)
-        saveToFirestore(updatedTasks, updatedCompleted)
+        const updatedCompleted = [...completed, task[index]]
+        setTask(updatedTasks); setCompleted(updatedCompleted); saveToFirestore(updatedTasks, updatedCompleted)
     }
+    const totalCount = task.length + completed.length
+    const percentageCount = totalCount === 0 ? 0 : Math.round((completed.length / totalCount) * 100)
 
-    const taskCount = task.length + completed.length
-    const percentageCount = taskCount === 0 ? 0 :
-        Math.round((completed.length / taskCount) * 100)
-
-    return <>
-        <section className='project-details'>
-            <header>
-                <img src="/icons/left_arrow_icon.png"
-                    alt="Left arrow icon"
-                    title='Go back'
-                    onClick={() => navigate(-1)}
-                    className='back-arrow'
-                />
-                <div className='detailsHeader'>
-                    <h3 className='header-text'>{project.name}</h3>
-                    <CircularProgress percentage={percentageCount} />
-                </div>
-            </header>
-
-            <main className='task-form'>
-                <form onSubmit={(e) => e.preventDefault()}>
-                    <input type="text"
-                        placeholder='Enter your task'
-                        onChange={handleInput}
-                        value={taskName}
-                    />
-                    <button type='button' onClick={handleClick}>
-                        Add Task
-                    </button>
-                </form>
-
-                <div className='taskContainer'>
-                    <h5>{project.category} Tasks</h5>
-
-                    {task.map((item, index) => (
-                        <div className='task' key={index}>
-                            <div>
-                                <input type="radio"
-                                    onClick={() => handleComplete(index)}
-                                />
-                                <p>{item}</p>
-                            </div>
-                            <img src="/icons/trash-solid-full.svg"
-                                alt="Delete icon"
-                                title='Delete Task'
-                                onClick={() => handleTaskDel(index)}
-                            />
-                        </div>
-                    ))}
-                </div>
-
-                <section className='completedSection'>
-                    <h3>COMPLETED TASKS</h3>
-
-                    <div className='completedContainer'>
-                        {completed.map((item, index) => (
-                            <div className='completedTask' key={index}>
-                                <div className='taskName'>
-                                    <input type="radio" checked readOnly />
-                                    <p>{item}</p>
-                                </div>
-                                <img src="/icons/trash-solid-full.svg"
-                                    alt="Delete icon"
-                                    title='Delete Task'
-                                    onClick={() => handleCompletedDel(index)}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            </main>
+    return <main className="project-details tn-project-detail">
+        <header className="tn-detail-topbar"><button className="tn-back-button" onClick={() => navigate(-1)}>← <span>Dashboard</span></button><span className="tn-saving-indicator">{saving ? 'Saving changes…' : 'All changes saved'}</span></header>
+        <section className="tn-detail-hero">
+            <div><span className="tn-eyebrow">{project.category || 'PROJECT'} / OVERVIEW</span><h1>{project.name}</h1><p>Keep your momentum. Every completed task moves this project forward.</p></div>
+            <div className="tn-detail-progress"><div className="tn-detail-progress-number">{percentageCount}<small>%</small></div><span>PROJECT COMPLETE</span><div className="tn-progress-track"><span style={{ width: `${percentageCount}%` }} /></div></div>
         </section>
-    </>
+        <section className="tn-task-workspace">
+            <div className="tn-task-column">
+                <div className="tn-task-section-heading"><div><span className="tn-eyebrow">THE NEXT STEPS</span><h2>Tasks to do <span>{task.length}</span></h2></div></div>
+                <form className="task-form tn-add-task-form" onSubmit={(e) => { e.preventDefault(); handleClick() }}><input type="text" placeholder="What needs to get done?" value={taskName} onChange={(e) => setTaskName(e.target.value)} /><button type="submit" disabled={!taskName.trim()}>＋ Add task</button></form>
+                <div className="taskContainer tn-task-list">
+                    {task.length ? task.map((item, index) => <div className="task tn-task-row" key={`${item}-${index}`}><label><input type="checkbox" onChange={() => handleComplete(index)} /><span className="tn-custom-check"></span><p>{item}</p></label><button aria-label="Delete task" onClick={() => handleTaskDel(index)}>×</button></div>) : <div className="tn-task-empty"><span>✳</span><strong>Nothing on your list yet</strong><p>Add a task above and start building momentum.</p></div>}
+                </div>
+            </div>
+            <aside className="completedSection tn-completed-panel"><div className="tn-task-section-heading"><div><span className="tn-eyebrow">LOOK WHAT YOU DID</span><h2>Completed <span>{completed.length}</span></h2></div><span className="tn-completed-check">✓</span></div>
+                <div className="completedContainer tn-completed-list">{completed.length ? completed.map((item, index) => <div className="completedTask tn-completed-row" key={`${item}-${index}`}><div className="taskName"><span className="tn-done-check">✓</span><p>{item}</p></div><button aria-label="Delete completed task" onClick={() => handleCompletedDel(index)}>×</button></div>) : <div className="tn-completed-empty">Your finished tasks will collect here. Keep going.</div>}</div>
+                <div className="tn-completion-note"><strong>{percentageCount}%</strong><span>of this project completed</span></div>
+            </aside>
+        </section>
+    </main>
 }
-
 export default ProjectDetail

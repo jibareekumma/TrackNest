@@ -1,54 +1,19 @@
-// import "../css/Header"
-
 import { useAuth } from "../context/AuthContext/index.jsx"
-
 import "../css/Header.css"
 import "../css/DarkMode.css"
 import DarkMode from "./DarkMode"
 import { doSignOut } from '../config/auth.js'
 import { useNavigate } from "react-router-dom"
 
-const Header = function( {cancelAll} ){
-
-    const today = new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long'
-    
-})
-
-const navigate = useNavigate();
-
-const { currentUser } = useAuth()
-    const username = currentUser?.displayName || "User"
-
-    return <header className = "first-page-header">
-        <div className = "upper-div">
-            <div className = "header-text">
-                <h4>Greetings, { username }</h4>
-                <p>{today}</p>
-            </div>
-
-            <div className = 'upper-div-btns'>
-            <button className = "clear-btn" 
-                onClick = {cancelAll}
-            > Clear All</button>
-            <button 
-        onClick={() => doSignOut().then(() => navigate('/login'))}
-        >Sign Out</button>
-        </div>
-        </div>
-
-
-        <div className = 'text-section'>
-            <h3 className = "greeting-text">
-                Let's Build Something
-                <br />
-                <span>    Great today! </span>
-            </h3>
-           <DarkMode />
-            </div>
+const Header = function({ cancelAll }) {
+    const today = new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })
+    const navigate = useNavigate()
+    const { currentUser } = useAuth()
+    const username = currentUser?.displayName?.split(' ')[0] || currentUser?.email?.split('@')[0] || 'there'
+    return <header className="first-page-header tn-topbar">
+        <div className="tn-brand"><span className="tn-brand-mark">t.</span><span>tracknest</span></div>
+        <div className="tn-topbar-center"><span className="tn-live-dot"></span> Your personal project space</div>
+        <div className="tn-topbar-actions"><div className="tn-user-meta"><strong>{username}</strong><span>{today}</span></div><DarkMode /><button className="tn-signout" onClick={() => doSignOut().then(() => navigate('/login'))}>Sign out</button></div>
     </header>
 }
-
 export default Header
