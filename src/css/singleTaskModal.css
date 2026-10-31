@@ -1,0 +1,48 @@
+.singleTask-modal {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  padding: 3rem;
+  background-color: white;
+  width: 60vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  z-index: 99;
+  display: none;
+}
+.singleTask-modal input {
+  width: 80%;
+  text-align: center;
+  height: 4rem;
+}
+.singleTask-modal input:focus {
+  outline: 2px groove rgb(0, 196, 204);
+}
+.singleTask-modal button {
+  width: 60%;
+  background-color: black;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleTask-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(24, 23, 23, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+}/*# sourceMappingURL=singleTaskModal.css.map */

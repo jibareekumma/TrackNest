@@ -1,0 +1,473 @@
+@font-face {
+  src: url(public/fonts/crimson/CrimsonText-Regular.ttf);
+  font-family: crimsonn;
+}
+@font-face {
+  src: url(public/fonts/abalumo/Agbalumo-Regular.ttf);
+  font-family: abalumo;
+}
+@font-face {
+  src: url(public/fonts/static/PlayfairDisplay-Regular.ttf);
+  font-family: playfair;
+}
+#home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-family: crimsonn;
+  margin-bottom: 3rem;
+  height: 100vh;
+  background-color: rgb(15, 18, 27);
+}
+
+.section1 {
+  background-image: url(/public/photos/home-photo\ 1.png);
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: local;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 75vh;
+}
+.section1 #container {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 3rem;
+}
+.section1 #container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: none;
+}
+.section1 #container header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: white;
+  font-family: abalumo;
+}
+.section1 #container header .hamburger-menu {
+  border: none;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.section1 #container header .hamburger-menu img {
+  width: 5rem;
+  height: 5rem;
+  filter: invert(1);
+}
+.section1 #container header .hamburger-menu img:hover {
+  width: 5.5rem;
+  height: 5.5rem;
+  filter: invert(74%) sepia(69%) saturate(512%) hue-rotate(135deg) brightness(95%) contrast(95%);
+}
+.section1 #container main {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 3.2rem;
+  color: white;
+}
+.section1 #container main h3 {
+  font-family: crimsonn;
+}
+.section1 #container main h4 {
+  font-family: crimsonn;
+}
+.section1 .review-index {
+  height: 25%;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: rgb(26, 32, 46);
+  border-radius: 15px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.section1 .review-index .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  width: 45%;
+  border: none;
+}
+.section1 .review-index .text-container div {
+  display: flex;
+  flex-direction: column;
+  gap: -0.5rem;
+}
+.section1 .review-index .text-container div h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.section1 .review-index .text-container div h2 span {
+  color: rgb(0, 210, 220);
+}
+.section1 .review-index .text-container div p {
+  font-size: 1.2rem;
+  color: rgb(148, 155, 170);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.section1 .review-index .text-container img {
+  width: 40%;
+  height: 2rem;
+  border: none;
+  margin-left: -0.4rem;
+}
+.section1 .review-index .image-container {
+  width: 45%;
+  height: 100%;
+}
+.section1 .review-index .image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+.section2 .text-section {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+.section2 .icons-section {
+  border: none;
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  font-family: crimsonn;
+  margin-bottom: 2rem;
+}
+.section2 .icons-section .social-icon {
+  background-color: rgb(161, 178, 144);
+  max-width: 4rem;
+  max-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.section2 .icons-section .social-icon:hover {
+  background-color: rgb(0, 245, 255);
+}
+.section2 .icons-section .social-icon img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 70%;
+  max-width: 280px;
+  background-color: white;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 5rem 2rem 2rem;
+  margin: 0;
+  transition: right 0.3s ease;
+}
+.menu-container.open {
+  right: 0;
+}
+.menu-container li {
+  padding: 1.2rem 0;
+  font-size: 1.4rem;
+  color: black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: crimsonn;
+  transition: color 0.2s ease;
+  font-weight: 800;
+}
+.menu-container li:hover {
+  color: rgb(0, 210, 220);
+  width: 100%;
+}
+.menu-container .close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: rgb(148, 155, 170);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50%;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.menu-container .close-btn:hover {
+  color: rgb(161, 178, 144);
+  background-color: rgba(0, 210, 220, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dsk-hero {
+  display: none;
+}
+
+.dsk-section2 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .section1,
+  .section2 {
+    display: none;
+  }
+  .section1 {
+    background-image: url(/public/photos/intro_img2.png);
+  }
+  .dsk-hero {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 70vh;
+    padding: 2.5rem;
+  }
+  .dsk-hero .dsk-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 2.5rem;
+  }
+  .dsk-hero .dsk-nav .dsk-logo {
+    font-family: abalumo;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-links {
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-links li {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-family: crimsonn;
+    transition: color 0.2s ease;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-links li:hover {
+    color: rgb(0, 210, 220);
+    font-weight: 700;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-links .dsk-nav-active {
+    color: white;
+    font-weight: 700;
+    position: relative;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-links .dsk-nav-active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgb(0, 210, 220);
+  }
+  .dsk-hero .dsk-nav .dsk-nav-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: crimsonn;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .dsk-hero .dsk-nav .dsk-nav-btn:hover {
+    background-color: rgb(0, 210, 220);
+    color: rgb(10, 10, 15);
+  }
+  .dsk-hero .dsk-hero-text h2 {
+    font-family: crimsonn;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  .dsk-hero .dsk-hero-badge {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.2rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 140px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  .dsk-hero .dsk-hero-badge .dsk-badge-number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: black;
+    letter-spacing: 1px;
+  }
+  .dsk-hero .dsk-hero-badge .dsk-badge-number .dsk-badge-plus {
+    color: rgb(0, 210, 220);
+  }
+  .dsk-hero .dsk-hero-badge .dsk-badge-label {
+    font-size: 0.9rem;
+    color: rgb(148, 155, 170);
+    font-weight: 500;
+    margin: 0;
+  }
+  .dsk-hero .dsk-hero-badge .dsk-avatar-strip {
+    margin-top: 0.5rem;
+    height: 28px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+  }
+  .dsk-section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0;
+    align-items: flex-start;
+    border: none;
+    height: auto;
+  }
+  .dsk-section2 .dsk-card-placeholder {
+    border-radius: none;
+    width: 48.5%;
+    height: 20rem;
+  }
+  .dsk-section2 .dsk-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 48.5%;
+    border: none;
+  }
+  .dsk-section2 .dsk-info-side .dsk-info-text {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+    letter-spacing: 1px;
+    font-family: crimsonn;
+  }
+  .dsk-section2 .dsk-info-side .dsk-icons-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .dsk-section2 .dsk-info-side .dsk-icons-row .social-icon {
+    background-color: rgb(161, 178, 144);
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .dsk-section2 .dsk-info-side .dsk-icons-row .social-icon:hover {
+    background-color: rgb(0, 245, 255);
+  }
+  .dsk-section2 .dsk-info-side .dsk-icons-row .social-icon img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .dsk-section2 .dsk-info-side .dsk-stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .dsk-section2 .dsk-info-side .dsk-stat-block .dsk-stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: black;
+    line-height: 1;
+    font-family: crimsonn;
+  }
+  .dsk-section2 .dsk-info-side .dsk-stat-block .dsk-stat-number .dsk-stat-pct {
+    color: rgb(0, 210, 220);
+    font-size: 2.5rem;
+  }
+  .dsk-section2 .dsk-info-side .dsk-stat-block .dsk-stat-label {
+    font-size: 1.2rem;
+    color: rgb(148, 155, 170);
+    width: 60%;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .dsk-section2 .dsk-info-side .dsk-stat-block .dsk-stat-label strong {
+    color: black;
+  }
+}/*# sourceMappingURL=Home.css.map */

@@ -1,0 +1,179 @@
+body.dark {
+  background-color: rgb(15, 18, 27);
+  color: rgb(225, 228, 235);
+}
+body.dark Header .header-text h4 {
+  color: rgb(225, 228, 235);
+}
+body.dark Header .header-text p {
+  color: rgb(225, 228, 235);
+}
+body.dark Header .greeting-text span {
+  color: rgb(225, 228, 235);
+}
+body.dark Header .upper-div button {
+  background-color: rgb(0, 210, 220);
+  color: rgb(10, 10, 15);
+}
+body.dark Header .upper-div button:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark SearchFeature .search-wrapper {
+  border: 5px solid white;
+}
+body.dark SearchFeature .search-wrapper input, body.dark SearchFeature .search-wrapper .modalWindow form select, body.dark .modalWindow form SearchFeature .search-wrapper select {
+  background-color: red;
+}
+body.dark .addTask {
+  border: rgb(0, 210, 220) 1px dashed;
+}
+body.dark .addTask:hover {
+  background-color: rgb(26, 32, 46);
+}
+body.dark .singleTask {
+  background-color: rgb(26, 32, 46);
+  color: rgb(148, 155, 170);
+  box-shadow: none;
+  border: rgba(255, 255, 255, 0.06) 2px solid;
+}
+body.dark .singleTask .pencil-icon {
+  filter: invert(74%) sepia(69%) saturate(512%) hue-rotate(135deg) brightness(95%) contrast(95%);
+}
+body.dark .singleTask .pencil-icon:hover {
+  filter: invert(84%) sepia(89%) saturate(650%) hue-rotate(135deg) brightness(105%) contrast(100%);
+}
+body.dark .singleTask .category-section p {
+  color: rgb(148, 155, 170);
+}
+body.dark .singleTask .category-section .trash-icon {
+  filter: invert(44%) sepia(91%) saturate(748%) hue-rotate(330deg) brightness(101%) contrast(101%);
+}
+body.dark .RecentHeader h5 {
+  color: rgb(225, 228, 235);
+}
+body.dark .RecentHeader .seeAllBtn {
+  background-color: rgb(0, 210, 220);
+  color: rgb(10, 10, 15);
+}
+body.dark .RecentHeader .seeAllBtn:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark .taskContainerM {
+  background-color: rgb(26, 32, 46);
+}
+body.dark .taskContainerM .iconContainer span {
+  background-color: rgb(0, 210, 220);
+}
+body.dark .taskContainerM .iconContainer h6 {
+  color: rgb(148, 155, 170);
+}
+body.dark .taskContainerM .details .texts h5 {
+  color: rgb(225, 228, 235);
+}
+body.dark .taskContainerM .details .texts p {
+  color: rgb(148, 155, 170);
+}
+body.dark .taskContainerM .details .icons .trash-icon {
+  filter: invert(44%) sepia(91%) saturate(748%) hue-rotate(330deg) brightness(101%) contrast(101%);
+}
+body.dark .taskContainerM .details .icons .navigate-icon {
+  filter: invert(74%) sepia(69%) saturate(512%) hue-rotate(135deg) brightness(95%) contrast(95%);
+}
+body.dark .taskContainerM .details .icons .navigate-icon:hover {
+  filter: invert(84%) sepia(89%) saturate(650%) hue-rotate(135deg) brightness(105%) contrast(100%);
+}
+body.dark .modalWindow {
+  background-color: rgb(22, 28, 40);
+}
+body.dark .modalWindow .headerContainer h3 {
+  color: rgb(225, 228, 235);
+}
+body.dark .modalWindow .headerContainer .btnClose {
+  filter: invert(74%) sepia(69%) saturate(512%) hue-rotate(135deg) brightness(95%) contrast(95%);
+}
+body.dark .modalWindow .headerContainer .btnClose:hover {
+  filter: invert(84%) sepia(89%) saturate(650%) hue-rotate(135deg) brightness(105%) contrast(100%);
+}
+body.dark .modalWindow form input, body.dark .modalWindow form select {
+  background-color: rgb(32, 40, 58);
+  color: rgb(148, 155, 170);
+}
+body.dark .modalWindow form button {
+  background-color: rgb(0, 210, 220);
+  color: rgb(225, 228, 235);
+}
+body.dark .modalWindow form button:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark .allProjects .headers span {
+  background-color: rgb(0, 210, 220);
+}
+body.dark .allProjects .headers span:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark .allProjects .headers button {
+  background-color: rgb(0, 210, 220);
+  color: rgb(10, 10, 15);
+}
+body.dark .allProjects .headers button:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark .project-details .back-arrow {
+  filter: invert(74%) sepia(69%) saturate(512%) hue-rotate(135deg) brightness(95%) contrast(95%);
+}
+body.dark .project-details .back-arrow:hover {
+  filter: invert(84%) sepia(89%) saturate(650%) hue-rotate(135deg) brightness(105%) contrast(100%);
+}
+body.dark .project-details h3 {
+  color: rgb(225, 228, 235);
+}
+body.dark .project-details form input, body.dark .project-details .modalWindow form select, body.dark .modalWindow .project-details form select {
+  color: black;
+  font-weight: 600;
+}
+body.dark .project-details form button {
+  background-color: rgb(0, 210, 220);
+  color: rgb(10, 10, 15);
+}
+body.dark .project-details form button:hover {
+  background-color: rgb(0, 245, 255);
+}
+body.dark .project-details .taskContainer {
+  color: black;
+}
+body.dark .project-details .taskContainer h5 {
+  color: rgb(225, 228, 235);
+}
+body.dark .project-details .completedSection h3 {
+  color: rgb(225, 228, 235);
+}
+body.dark .project-details .completedSection .completedContainer {
+  color: black;
+}
+body.dark .circular-text {
+  fill: white;
+}
+body.dark .percentage-text {
+  color: white;
+  font-weight: 700;
+}
+body.dark #bitmoji-container .bitmoji-container {
+  color: rgb(148, 155, 170);
+  background-color: rgb(26, 32, 46);
+}
+body.dark #bitmoji-container .bitmoji-container .emoji {
+  background-color: rgb(15, 18, 27);
+}
+body.dark #bitmoji-container .bitmoji-container .emoji-texts h3 {
+  color: rgb(225, 228, 235);
+}
+body.dark #bitmoji-container .bitmoji-container .emoji-texts p {
+  color: rgb(148, 155, 170);
+}
+body.dark #home-page {
+  background-color: rgb(15, 18, 27);
+  color: white;
+}
+body.dark #home-page .section2 .text-section {
+  color: rgb(148, 155, 170);
+}/*# sourceMappingURL=DarkMode.css.map */

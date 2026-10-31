@@ -1,0 +1,25 @@
+@import "./src/css/DarkMode.css";
+@font-face {
+  src: url(public/fonts/crimson/CrimsonText-Regular.ttf);
+  font-family: crimsonn;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-family: crimsonn;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 3rem;
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,58 @@
+@import "./src/css/DarkMode.css";
+
+$bold-text: black;
+$medium-text: rgb(51, 52, 56);
+$light-text: rgb(89, 89, 92);
+
+
+// New color design
+$bg-main: rgba(248, 249, 253, 1);
+$card-bg: rgba(255, 255, 255, 1);
+$text-bold: rgba(30, 39, 46, 1);
+$accent-btn: rgba(0, 196, 204, 1);
+
+// Dark Mode Variation
+$bg-main-d: rgba(21, 26, 35, 1);
+$card-bg-d: rgba(32, 41, 58, 1);
+$text-bold-d: rgba(241, 242, 246, 1);
+$accent-d: rgba(0, 229, 255, 1);
+
+@font-face{
+    src: url(public/fonts/crimson/CrimsonText-Regular.ttf);
+    font-family: crimsonn;
+}
+
+*{
+    
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    
+    background-color: white;
+    // margin: 1rem;
+    color: black;
+    font-family: crimsonn;
+}
+
+
+// BreakPoints
+// Tablet
+@media (min-width: 768px){
+    body {
+        margin: 3rem;
+        // background-color:  black;
+    }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+    // body{
+    //     // Style Herre
+    // }
+}

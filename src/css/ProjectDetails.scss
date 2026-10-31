@@ -1,0 +1,223 @@
+
+
+
+$bold-text: black;
+$medium-text: rgb(51, 52, 56);
+$light-text: rgb(89, 89, 92);
+$task-bg: rgb(202, 202, 230);
+$task-bg-hover: rgb(199, 199, 216);
+$letter-spacing-small: 0.5px;
+$letter-spacing-big: 1px;
+$text-weight-small: 300;
+
+
+// New color design
+$card-bg: rgb(224, 225, 226);
+$text-bold: rgba(30, 39, 46, 1);
+$accent-btn: rgba(0, 196, 204, 1);
+
+// Dark Mode Variation
+$bg-main-d: rgba(21, 26, 35, 1);
+$card-bg-d: rgba(32, 41, 58, 1);
+$text-bold-d: rgba(241, 242, 246, 1);
+$accent-d: rgba(0, 229, 255, 1);
+
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // border: 2px solid black;
+    align-items: center;
+    padding: 1rem;
+
+    img{
+        width: 30px;
+        height: 30px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .detailsHeader{
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: flex-end;
+
+
+        h3{
+        font-size: 1.7rem;
+        letter-spacing: $letter-spacing-small;
+        word-spacing: 1px;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: normal;
+        color: blue;
+
+    }
+    }
+    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    
+    input{
+        width: 70%;
+        height: 3.5rem;
+        display: flex;
+        letter-spacing: 0.5px;
+        border: none;
+        background-color: rgba(245, 245, 245, 1);
+        border-radius: 5px;
+        padding-left: 2rem;
+
+        &:focus{
+            outline: 1px groove rgb(124, 124, 212);
+        }
+    }
+
+    button{
+        width: 25%;
+        height: 3.5rem;
+        background-color: $accent-btn;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 5px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: $medium-text;
+        }
+    }
+}
+
+.taskContainer{
+
+    // border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    h5{
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        letter-spacing: $letter-spacing-small;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: -0.5rem;
+        height: 4rem;
+        align-items: center;
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        background-color: $task-bg;
+        border: none;
+        border-radius: 5px;
+        padding-right: 2rem;
+        
+        div{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        img{
+            width: 20px;
+        }
+    }
+}
+
+
+.completedSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+        h3{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .completedContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .completedTask{
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-right: 2rem;
+            border: 1px solid green;
+            height: 4rem;
+            border: none;
+            width: 80%;
+            margin-right: 10%;
+            margin-left: 10%;
+            padding-left: 1rem;
+            border-radius: 5px;
+            background-color: $task-bg-hover;
+
+            .taskName{
+                display: flex;
+                gap: 1rem;
+                font-size: 1.5rem;
+                text-decoration: line-through;
+                align-items: center;
+                font-weight: 300;
+            }
+            img{
+                width: 20px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    form{
+        flex-direction: column;
+        gap: 1rem;
+
+        input{
+            height: 5rem;
+        }
+    }
+}

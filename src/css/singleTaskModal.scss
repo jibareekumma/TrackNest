@@ -1,0 +1,77 @@
+
+
+$bold-text: black;
+$medium-text: rgb(51, 52, 56);
+$light-text: rgb(89, 89, 92);
+$task-bg: rgb(202, 202, 230);
+$letter-spacing-small: 0.5px;
+$letter-spacing-big: 1px;
+$text-weight-big: 300;
+
+// New color design
+$card-bg: rgb(224, 225, 226);
+$text-bold: rgba(30, 39, 46, 1);
+$accent-btn: rgba(0, 196, 204, 1);
+
+// Dark Mode Variation
+$bg-main-d: rgba(21, 26, 35, 1);
+$card-bg-d: rgba(32, 41, 58, 1);
+$text-bold-d: rgba(241, 242, 246, 1);
+$accent-d: rgba(0, 229, 255, 1);
+
+
+
+.singleTask-modal{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem;
+    background-color: white;
+    width: 60vw;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    z-index: 99;
+    display: none;
+
+
+
+    input{
+        width: 80%;
+        text-align: center;
+        height: 4rem;
+
+        &:focus{
+            outline: 2px groove $accent-btn;
+        }
+    }
+
+    button{
+        width: 60%;
+        background-color: black;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.singleTask-backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(24, 23, 23, 0.1);
+  backdrop-filter: blur(10px);
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+}

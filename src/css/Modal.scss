@@ -1,0 +1,140 @@
+
+
+$bold-text: black;
+$medium-text: rgb(51, 52, 56);
+$light-text: rgb(89, 89, 92);
+
+
+
+.modalWindow{
+    border: none;
+    width: 70vw;
+    height: auto;
+    padding: 2rem;
+    display: none;
+    flex-direction: column;
+    gap: 3rem;
+    // background-color: white;
+    background-color: rgba(22, 28, 40, 1);
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    pointer-events: auto;
+    color: rgba(148, 155, 170, 1);
+    font-family: crimsonn;
+    
+
+
+    .headerContainer{
+        // border: 1px solid grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        align-items: center;
+        
+        h3{
+            font-size: 1.8rem;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            color: $medium-text;
+            font-weight: 400;
+        }
+        img{
+            cursor: pointer;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem ;
+
+        input{
+            width: 100%;
+            height: 4rem;
+            border-radius: 5px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border: 0.3px groove $light-text;
+            font-family: crimsonn
+        }
+
+        select{
+            @extend input;
+        }
+
+        button{
+            @extend input;
+            background-color: black;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: none;
+            font-family: crimsonn;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $medium-text;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .modalWindow{
+        padding: 2.5rem;
+        gap: 4rem;
+        width: 50vw;
+        height: auto;
+
+        .headerContainer{
+
+            h3{
+                font-size: 2rem;
+                font-weight: 300;
+            }
+        }
+
+        form{
+            gap: 2.5rem;
+            align-items: flex-end;
+
+            input{
+                height: 4.5rem;
+            }
+            button{
+                width: 25%;
+                height: 3rem;
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 1024px){
+    .modalWindow{
+
+        width: 40vw;
+    }
+}
+
+.backdrop {
+
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+  display: none;
+
+}

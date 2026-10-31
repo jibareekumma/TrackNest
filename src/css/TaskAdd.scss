@@ -1,0 +1,242 @@
+
+
+
+$bold-text: black;
+$medium-text: rgb(51, 52, 56);
+$light-text: rgb(89, 89, 92);
+$task-bg: rgb(202, 202, 230);
+$letter-spacing-small: 0.5px;
+$letter-spacing-big: 1px;
+$text-weight-big: 300;
+
+// New color design
+$card-bg: rgb(224, 225, 226);
+$text-bold: rgba(30, 39, 46, 1);
+$accent-btn: rgba(0, 196, 204, 1);
+
+// Dark Mode Variation
+$bg-main-d: rgba(21, 26, 35, 1);
+$card-bg-d: rgba(32, 41, 58, 1);
+$text-bold-d: rgba(241, 242, 246, 1);
+$accent-d: rgba(0, 229, 255, 1);
+
+
+.first-page-task-container{
+   
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+   
+
+    .addTask{
+        width: 100%;
+        height: 13rem;
+        border: 0.5px dashed $medium-text;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+
+        &:hover{
+            cursor: pointer;
+           
+            background-color: rgb(208, 209, 214);
+        }
+    }
+}
+
+
+
+.singleTask{
+
+    background-color: $card-bg;
+    color: black;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    height: 13rem;
+    margin-bottom: 2%;
+    box-shadow: 1px 3px 10px rgb(211, 211, 223);;
+
+
+    .single-task-headers{
+
+        // border: 2px solid black;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        h5{
+        font-weight: 700;
+        font-size: 1.7rem;
+        letter-spacing: $letter-spacing-big;
+        word-spacing: 1.2px; 
+    }
+
+    .pencil-icon{
+
+        filter: invert(67%) sepia(98%) 
+        saturate(364%) hue-rotate(140deg) 
+        brightness(95%) contrast(101%);
+
+        &:hover{
+            filter: brightness(0.2);;
+        }
+    }
+
+
+    }
+
+
+    h5{
+        font-weight: 700;
+        font-size: 1.7rem;
+        letter-spacing: $letter-spacing-big;
+        word-spacing: 1.2px; 
+    }
+
+    .percentage-container{
+        // border: 2px solid black;
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin-left: 20%;
+        margin-left: 30%;
+        align-items: center;
+        gap: 1rem;
+        
+
+        CircularProgress{
+            color: black;
+        }
+
+        p{
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: black;
+            letter-spacing: 1px;
+        }
+
+    }
+
+    .category-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+
+        p{
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: rgb(55, 56, 58);
+        }
+    }
+
+
+    img{
+        width: 25px;
+        height: 25px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+     
+    }
+    
+
+    
+
+
+.toast{
+
+    border: 2px solid black;
+    width: 70%;
+    position: fixed;
+    top: 3rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: $letter-spacing-small;
+    word-spacing: $letter-spacing-big;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+
+}
+
+.toastBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.toastLoader{
+    position: absolute;
+    bottom: 0;          
+    left: 0;
+    height: 4px;         
+    width: 100%;
+    background-color: rgb(239, 239, 247);
+    border-radius: 0 0 5px 5px;
+    animation: shrink 3s linear forwards; 
+}
+
+@keyframes shrink {
+    from { width: 100%; }
+    to   { width: 0%; }
+}
+
+
+@media (min-width: 768px){
+
+    .first-page-task-container{
+      
+        .addTask{
+            grid-column: span 2;
+        }
+        }
+        
+}
+
+
+    
+
+@media (min-width: 1024px){
+    
+     .first-page-task-container{
+        grid-template-columns: 1fr 1fr 1fr;
+        .addTask{
+            grid-column: span 1;
+        }
+        }
+}

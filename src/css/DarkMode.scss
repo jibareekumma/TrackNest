@@ -1,0 +1,307 @@
+
+
+$main-bg: rgba(15, 18, 27, 1);
+$project-card: rgba(26, 32, 46, 1);
+$modal-container: rgba(22, 28, 40, 1);
+$text-main: rgba(225, 228, 235, 1);
+$text-secondary: rgba(148, 155, 170, 1);
+
+$btn-color: rgba(0, 210, 220, 1);
+$btn-hover: rgba(0, 245, 255, 1);
+$btn-text: rgba(10, 10, 15, 1);
+
+$modal-btn:  rgba(0, 210, 220, 1);
+$modal-btn-hover: rgba(0, 245, 255, 1);
+
+$bin-icon: rgba(255, 75, 75, 1);
+
+$card-border: rgba(255, 255, 255, 0.06);
+$card-shadow:  rgba(0, 0, 0, 0.4);
+$input-bg: rgba(32, 40, 58, 1);
+$input-border: rgba(255, 255, 255, 0.1);
+$accent-glow:  rgba(0, 210, 220, 0.15);
+
+$trash-icon: invert(44%) sepia(91%) saturate(748%) 
+                hue-rotate(330deg) brightness(101%) 
+                contrast(101%);
+
+$pencil-icon: invert(74%) sepia(69%) saturate(512%) 
+                    hue-rotate(135deg) brightness(95%) 
+                    contrast(95%);
+
+$pencil-icon-hover: invert(84%) sepia(89%) saturate(650%) 
+                            hue-rotate(135deg) brightness(105%) 
+                            contrast(100%);
+                            
+
+
+body.dark{
+
+    background-color: $main-bg;
+    color: $text-main;
+
+    Header{
+       .header-text{
+        h4{
+            color: $text-main;
+        }
+        p{
+            color: $text-main;
+        }
+       }
+
+       .greeting-text{
+        span{
+            color: $text-main;
+        }
+       }
+
+       .upper-div{
+        button{
+            background-color: $btn-color;
+            color: $btn-text;
+            &:hover{
+                background-color: $btn-hover;
+            }
+        }
+       }
+    }
+
+
+    SearchFeature{
+        .search-wrapper{
+            border: 5px solid white;
+            input{
+                background-color: red;
+            }
+        }
+    }
+
+    .addTask{
+        border: $btn-color 1px dashed;
+        &:hover{
+            background-color: $project-card
+        }
+    }
+
+    .singleTask{
+        background-color: $project-card;
+        color: $text-secondary;
+        box-shadow: none;
+        border: $card-border 2px solid;
+
+        .pencil-icon{
+            filter: invert(74%) sepia(69%) saturate(512%) 
+                    hue-rotate(135deg) brightness(95%) 
+                    contrast(95%);
+                    &:hover{
+                        
+                    filter: invert(84%) sepia(89%) saturate(650%) 
+                            hue-rotate(135deg) brightness(105%) 
+                            contrast(100%);
+                            }
+                    }
+
+        .category-section{
+            p{color: $text-secondary;}
+
+            .trash-icon{
+                filter: invert(44%) sepia(91%) saturate(748%) 
+                hue-rotate(330deg) brightness(101%) 
+                contrast(101%);
+            }
+        }
+        
+    }
+
+
+    .RecentHeader{
+        h5{
+            color: $text-main;
+        }
+        .seeAllBtn{
+            background-color: $btn-color;
+            color: $btn-text;
+            &:hover{
+                background-color: $btn-hover;
+            }
+        }
+    }
+
+
+    .taskContainerM{
+        background-color: $project-card;
+
+        .iconContainer{
+            span{
+                background-color: $btn-color;
+            }
+            h6{
+                color: $text-secondary;
+            }
+        }
+
+        .details{
+            .texts{
+                h5{
+                    color: $text-main;
+                }
+                p{
+                    color: $text-secondary;
+                }
+            }
+            .icons{
+                .trash-icon{
+                    filter: $trash-icon;
+                }
+                .navigate-icon{
+                    filter: $pencil-icon;
+                    &:hover{
+                        filter: $pencil-icon-hover;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .modalWindow{
+        background-color: $modal-container;
+        .headerContainer{
+            h3{
+                color: $text-main;
+            }
+            .btnClose{
+                filter: $pencil-icon;
+                &:hover{
+                    filter: $pencil-icon-hover;
+                    
+                }
+            }
+        }
+        form{
+            input{
+                background-color: $input-bg;
+                color: $text-secondary;
+            }
+            select{
+                @extend input
+            }
+            button{
+                background-color: $modal-btn;
+                color: $text-main;
+                &:hover{
+                    background-color: $modal-btn-hover;
+                    
+                }
+            }
+        }
+    }
+
+
+    .allProjects{
+        .headers{
+            span{
+                background-color: $btn-color;
+                &:hover{
+                    background-color: $btn-hover;
+                }
+            }
+            button{
+                background-color: $btn-color;
+                color: $btn-text;
+                &:hover{
+                    background-color: $btn-hover;
+                }
+            }
+        }
+    }
+
+    .project-details{
+        .back-arrow{
+            filter: $pencil-icon;
+            &:hover{
+                filter: $pencil-icon-hover
+            }
+        }
+
+        h3{
+            color: $text-main;
+        }
+
+        form{
+            input{
+                color: black;
+                font-weight: 600;
+            }
+            button{
+                background-color: $btn-color;
+                color: $btn-text;
+                &:hover{
+                    background-color: $btn-hover;
+                }
+            }
+        }
+
+        .taskContainer{
+            color: black;
+            h5{
+                color: $text-main;
+            }
+        }
+
+        .completedSection{
+            h3{
+                color: $text-main;
+            }
+            .completedContainer{
+                color: black;
+            }
+        }
+        
+        
+    }
+
+    .circular-text {
+        fill: white;  
+    }
+
+    .percentage-text{
+        color: white;
+        font-weight: 700;
+    }
+
+    #bitmoji-container{
+    
+        .bitmoji-container{
+            color: $text-secondary;
+            background-color: $project-card;
+
+            .emoji{
+                background-color: $main-bg;
+            }
+            .emoji-texts{
+                h3{
+                    color: $text-main;
+
+                }
+                p{
+                    color: $text-secondary;
+                }
+            }
+        }
+    }
+
+    #home-page{
+        background-color: $main-bg;
+        color: white;
+
+        .section2{
+            .text-section{
+                color: $text-secondary;
+            }
+        }
+    }
+
+}
+

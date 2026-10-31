@@ -1,0 +1,183 @@
+.first-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.upper-div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.upper-div .header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.upper-div .header-text h4 {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  color: rgb(51, 52, 56);
+}
+.upper-div .header-text p {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: rgb(89, 89, 92);
+  font-weight: 300;
+  font-style: italic;
+}
+.upper-div button {
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 196, 204);
+  font-size: 1.2rem;
+  border: none;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  font-family: crimsonn;
+}
+.upper-div button:hover {
+  cursor: pointer;
+  background-color: rgb(51, 52, 56);
+}
+
+.text-section {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.greeting-text {
+  font-size: 2.5rem;
+  font-weight: 300;
+  word-spacing: 1.5px;
+  letter-spacing: 0.3px;
+}
+.greeting-text span {
+  font-size: 2rem;
+  color: rgb(51, 52, 56);
+}
+
+.mode-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 13rem;
+  height: 4rem;
+  border-radius: 50px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: crimsonn;
+  font-size: 1rem;
+}
+.mode-container.light {
+  background-color: #f0f0f0;
+  border: 2px solid #e0e0e0;
+}
+.mode-container.light .mode-text {
+  color: black;
+  order: 1;
+}
+.mode-container.light .mode-circle {
+  background-color: white;
+  order: 2;
+}
+.mode-container.light .mode-circle svg {
+  stroke: black;
+}
+.mode-container.dark {
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+}
+.mode-container.dark .mode-text {
+  color: white;
+  order: 2;
+}
+.mode-container.dark .mode-circle {
+  background-color: white;
+  order: 1;
+}
+.mode-container.dark .mode-circle svg {
+  stroke: black;
+}
+
+.mode-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0 0.5rem;
+  transition: color 0.3s ease;
+  font-family: crimsonn;
+}
+
+.mode-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+.mode-circle svg {
+  width: 25px;
+  height: 25px;
+}
+
+@media (min-width: 768px) {
+  .upper-div button {
+    width: 12rem;
+    font-size: 1.5rem;
+  }
+  .mode-container {
+    width: 15rem;
+    height: 4.5rem;
+  }
+  .mode-container .mode-text {
+    font-size: 1rem;
+  }
+  .mode-container .mode-circle {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .mode-container .mode-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .mode-container {
+    width: 14rem;
+    height: 4rem;
+  }
+  .mode-container .mode-text {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .mode-container .mode-circle {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .mode-container .mode-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+}/*# sourceMappingURL=Header.css.map */
